@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Angular Example</title>
+
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" />
+        <!-- endbower -->
+
+        <!-- injector:css -->
+        <link rel="stylesheet" href="app/styles/app.css">
+        <!-- endinjector -->
+    </head>
+    <body ng-app="example" ng-controller="AppController">
+
+        <h2>{{weather.main.temp}} C</h2>
+
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/bootstrap-css/js/bootstrap.min.js"></script>
+        <!-- endbower -->
+
+        <!-- injector:js -->
+        <script src="app/scripts/app.js"></script>
+        <!-- endinjector -->
+    </body>
+</html>

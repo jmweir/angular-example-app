@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Weather Looker Upper</title>
+
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="bower_components/font-awesome-bower/css/font-awesome.css" />
+        <!-- endbower -->
+
+        <!-- injector:css -->
+        <link rel="stylesheet" href="app/styles/app.css">
+        <!-- endinjector -->
+    </head>
+    <body ng-app="example" ng-controller="AppController">
+
+        <div class="container">
+            <div class="row">
+                <h2>Weather Looker Upper</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <form class="form-inline" role="form">
+                        <div class="input-group">
+                            <label class="sr-only" for="city">City</label>
+                            <input type="search" class="form-control" id="city" ng-model="city" placeholder="City" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div open-weather="city"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/bootstrap-css/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <!-- endbower -->
+
+        <!-- injector:js -->
+        <script src="app/scripts/app.js"></script>
+        <script src="app/scripts/openweather.js"></script>
+        <!-- endinjector -->
+    </body>
+</html>

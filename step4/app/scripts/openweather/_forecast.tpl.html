@@ -1,0 +1,16 @@
+<div ng-show="forecast.list" class="row">
+    <div class="col-md-2" ng-repeat="day in forecast.list">
+        <div class="row">
+            <img src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" />
+        </div>
+        <div class="row">
+            <span>{{day.weather[0].main}}</span>
+        </div>
+        <div class="row">
+            <span>Low: {{day.temp.min | temperature:units}}, High: {{day.temp.max | temperature:units}}</span>
+        </div>
+        <div class="row">
+            <span>{{day.dt * 1000 | date:'yyyy-MM-dd'}}</span>
+        </div>
+    </div>
+</div>
