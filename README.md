@@ -1,2 +1,2 @@
-==Angular.js Example Application
+## Angular.js Example Application
 
