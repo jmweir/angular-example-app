@@ -4,8 +4,7 @@
 
 ## Build
 * npm install
-* bower install
-* grunt serve
+* grunt
 
 ## Run Tests
 * grunt karma:unit
