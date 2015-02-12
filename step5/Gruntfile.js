@@ -36,19 +36,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Unit testing
-        karma: {
-            options: {
-                configFile: 'karma.conf.js'
-            },
-            unit: {
-                singleRun: true
-            },
-            debug: {
-
-            }
-        },
-
         watch: {
             bower: {
                 files: ['bower.json'],
@@ -58,7 +45,7 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('serve', [
+    grunt.registerTask('default', [
         'wiredep',
         'injector',
         'connect:app',

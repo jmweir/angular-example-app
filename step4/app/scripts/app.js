@@ -8,8 +8,12 @@
             'example.openweather'
         ])
 
-        .controller('AppController', ['$scope', function($scope) {
+        .controller('AppController', ['$scope', 'ForecastService', function($scope, ForecastService) {
             $scope.units = 'imperial';
+
+            $scope.lookup = function() {
+                $scope.forecast = ForecastService.get({ city: $scope.city });
+            };
         }]);
 
 })(angular);

@@ -7,7 +7,7 @@
         ])
 
         .factory('OpenWeather', ['$resource', function($resource) {
-            return $resource('http://api.openweathermap.org/data/2.5/weather?q=:city&units=imperial');
+            return $resource('http://api.openweathermap.org/data/2.5/weather?q=Rockville,us&units=metric');
         }]);
 
 })(angular);

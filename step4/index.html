@@ -19,13 +19,13 @@
                 <h2>Weather Looker Upper</h2>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-8">
                     <form class="form-inline" role="form">
-                        <div class="input-group">
+                        <div class="form-group">
                             <label class="sr-only" for="city">City</label>
                             <input type="search" class="form-control" id="city" ng-model="city" placeholder="City" />
                         </div>
-                        <div class="input-group">
+                        <div class="form-group">
                             <label class="radio-inline">
                                 <input type="radio" ng-model="units" value="imperial"> F
                             </label>
@@ -33,12 +33,28 @@
                                 <input type="radio" ng-model="units" value="metric"> C
                             </label>
                         </div>
+                        <button type="submit" class="btn btn-primary" ng-click="lookup()">Lookup</button>
                     </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div forecast="city" units="units" />
+                    <div ng-show="forecast.$resolved" class="row">
+                        <div class="col-md-2" ng-repeat="day in forecast.list">
+                            <div class="row">
+                                <img src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" />
+                            </div>
+                            <div class="row">
+                                <span>{{day.weather[0].main}}</span>
+                            </div>
+                            <div class="row">
+                                <span>Low: {{day.temp.min | temperature:units | number:0}}, High: {{day.temp.max | temperature:units | number:0}}</span>
+                            </div>
+                            <div class="row">
+                                <span>{{day.dt * 1000 | date:'yyyy-MM-dd'}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,7 +69,7 @@
 
         <!-- injector:js -->
         <script src="app/scripts/app.js"></script>
-        <script src="app/scripts/openweather/openweather.js"></script>
+        <script src="app/scripts/openweather.js"></script>
         <!-- endinjector -->
     </body>
 </html>

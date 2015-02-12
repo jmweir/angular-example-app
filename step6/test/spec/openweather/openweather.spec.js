@@ -65,7 +65,7 @@ describe('Module: OpenWeather', function() {
 
     describe('Directive: Forecast', function() {
 
-        var scope, element;
+        var scope, $rootScope, element;
 
         beforeEach(module(function($provide) {
             $provide.value('ForecastService', {
@@ -93,17 +93,21 @@ describe('Module: OpenWeather', function() {
 
         beforeEach(module('templates'));
 
-        beforeEach(inject(function($rootScope, $compile) {
+        beforeEach(inject(function(_$rootScope_, $compile) {
+            $rootScope = _$rootScope_;
+
             scope = $rootScope.$new();
-            scope.city = 'London';
             scope.units = 'imperial';
 
-            element = $compile('<div forecast="city" units="units" />')(scope);
+            element = $compile('<div forecast="units" />')(scope);
 
             scope.$apply();
         }));
 
         it('should render forecast data with correct units', function() {
+            $rootScope.$broadcast('lookup', 'London');
+            $rootScope.$digest();
+
             expect(element.find('div').eq(1).find('img').attr('src')).toBe('http://openweathermap.org/img/w/01d.png');
             expect(element.find('div').eq(2).find('span').text()).toBe('Clear');
             expect(element.find('div').eq(3).find('span').text()).toBe('Low: 44, High: 62');

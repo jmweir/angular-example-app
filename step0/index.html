@@ -11,9 +11,9 @@
         <link rel="stylesheet" href="app/styles/app.css">
         <!-- endinjector -->
     </head>
-    <body ng-app="example" ng-controller="AppController">
+    <body data-ng-app="example" data-ng-controller="AppController">
 
-        <h2>{{weather.main.temp}} C</h2>
+        <h2 data-ng-cloak>{{temp}} C</h2>
 
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>

@@ -1,11 +1,10 @@
 <!doctype html>
 <html>
     <head>
-        <title>Weather Looker Upper</title>
+        <title>Angular Example</title>
 
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="bower_components/font-awesome-bower/css/font-awesome.css" />
         <!-- endbower -->
 
         <!-- injector:css -->
@@ -14,26 +13,7 @@
     </head>
     <body ng-app="example" ng-controller="AppController">
 
-        <div class="container">
-            <div class="row">
-                <h2>Weather Looker Upper</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <form class="form-inline" role="form">
-                        <div class="input-group">
-                            <label class="sr-only" for="city">City</label>
-                            <input type="search" class="form-control" id="city" ng-model="city" placeholder="City" />
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <h3 ng-if="weather.main">{{weather.main.temp}} F</h3>
-                </div>
-            </div>
-        </div>
+        <h2>{{weather.main.temp}} C</h2>
 
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>

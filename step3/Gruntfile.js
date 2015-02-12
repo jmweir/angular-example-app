@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('serve', [
+    grunt.registerTask('default', [
         'wiredep',
         'injector',
         'connect:app',

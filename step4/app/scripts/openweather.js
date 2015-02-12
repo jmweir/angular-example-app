@@ -30,25 +30,4 @@
             }
         })
 
-        .directive('forecast', ['ForecastService', function(ForecastService) {
-            return {
-                restrict: 'A',
-                replace: true,
-                scope: {
-                    city: '=forecast',
-                    units: '='
-                },
-                link: function($scope) {
-                    var updateForecast = function() {
-                        $scope.forecast = ForecastService.get({
-                            city: $scope.city
-                        });
-                    };
-
-                    $scope.$watch('city', updateForecast);
-                },
-                templateUrl: 'app/scripts/openweather/_forecast.tpl.html'
-            }
-        }])
-
 })(angular);

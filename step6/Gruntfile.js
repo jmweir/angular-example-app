@@ -36,6 +36,19 @@ module.exports = function (grunt) {
             }
         },
 
+        // Unit testing
+        karma: {
+            options: {
+                configFile: 'karma.conf.js'
+            },
+            unit: {
+                singleRun: true
+            },
+            debug: {
+
+            }
+        },
+
         watch: {
             bower: {
                 files: ['bower.json'],
@@ -44,6 +57,10 @@ module.exports = function (grunt) {
         }
 
     });
+
+    grunt.registerTask('test', [
+        'karma:unit'
+    ]);
 
     grunt.registerTask('default', [
         'wiredep',
